@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import com.swiggy.shared.User;
+
 import javax.validation.Valid;
 import java.util.List;
 
@@ -23,7 +24,6 @@ public class UserController {
     public User createUser(@Valid @RequestBody User user) throws ServiceLayerException {
         return userService.create(user);
     }
-
 
     @GetMapping("/users/{id}")
     public User fetchUserById(@PathVariable(value = "id") Long userId) throws ServiceLayerException {
