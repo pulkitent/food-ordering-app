@@ -1,4 +1,4 @@
-package com.swiggy.shared;
+package com.swiggy.foodapp.shared;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "user")
 public class User {
-
+    @Id
     @NotNull
     @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,13 +15,11 @@ public class User {
     @NotNull
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "name_id")
-    @Column(name = "name", nullable = false)
-    private final Name name;
+    private Name name;
 
     @NotNull
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
-    @Column(name = "address", nullable = false)
     private Address address;
 
     @NotNull
@@ -32,6 +30,21 @@ public class User {
         this.name = name;
         this.emailId = emailId;
         this.address = address;
+    }
+
+    public User() {
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public Name getName() {
+        return name;
+    }
+
+    public Address getAddress() {
+        return address;
     }
 
     public String getEmailId() {

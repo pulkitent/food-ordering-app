@@ -1,6 +1,6 @@
-package com.swiggy.repository;
+package com.swiggy.foodapp.repository;
 
-import com.swiggy.shared.User;
+import com.swiggy.foodapp.shared.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

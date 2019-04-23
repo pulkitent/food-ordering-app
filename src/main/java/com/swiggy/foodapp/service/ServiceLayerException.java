@@ -1,7 +1,7 @@
-package com.swiggy.service;
+package com.swiggy.foodapp.service;
 
 public class ServiceLayerException extends Throwable {
-    public ServiceLayerException(String message) {
+    ServiceLayerException(String message) {
         super(message);
     }
 }

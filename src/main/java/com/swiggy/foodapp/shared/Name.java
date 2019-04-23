@@ -1,4 +1,4 @@
-package com.swiggy.shared;
+package com.swiggy.foodapp.shared;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "user_name")
 class Name {
-
+    @Id
     @NotNull
     @Column(name = "name_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,13 +14,20 @@ class Name {
 
     @NotNull
     @Column(name = "first_name")
-    private final String firstName;
+    private String firstName;
 
     @Column(name = "mid_name")
-    private final String midName;
+    private String midName;
 
     @Column(name = "last_name")
-    private final String lastName;
+    private String lastName;
+
+    public Name() {
+    }
+
+    public Long getNameId() {
+        return nameId;
+    }
 
     public String getFirstName() {
         return firstName;

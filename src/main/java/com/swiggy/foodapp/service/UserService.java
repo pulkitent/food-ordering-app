@@ -1,10 +1,10 @@
-package com.swiggy.service;
+package com.swiggy.foodapp.service;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.swiggy.shared.User;
-import com.swiggy.repository.UserRepository;
+import com.swiggy.foodapp.shared.User;
+import com.swiggy.foodapp.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,11 +15,7 @@ public class UserService {
 
     @Autowired
     UserService(UserRepository userRepository) throws ServiceLayerException {
-        try {
-            this.userRepository = userRepository;
-        } catch (Exception ex) {
-            throw new ServiceLayerException(ex.getMessage());
-        }
+        this.userRepository = userRepository;
     }
 
     public User create(User user) throws ServiceLayerException {
