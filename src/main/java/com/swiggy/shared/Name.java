@@ -1,12 +1,18 @@
 package com.swiggy.shared;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "user_name")
 class Name {
+
+    @NotNull
+    @Column(name = "name_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long nameId;
+
+    @NotNull
     @Column(name = "first_name")
     private final String firstName;
 

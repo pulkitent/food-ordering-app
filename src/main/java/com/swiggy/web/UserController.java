@@ -1,17 +1,17 @@
 package com.swiggy.web;
 
+import com.swiggy.shared.User;
 import com.swiggy.service.ServiceLayerException;
 import com.swiggy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import com.swiggy.shared.User;
 
 import javax.validation.Valid;
 import java.util.List;
 
-@Controller
-@RequestMapping("/api")
+
+@RestController
+@RequestMapping("/api/v1")
 public class UserController {
     private UserService userService = null;
 

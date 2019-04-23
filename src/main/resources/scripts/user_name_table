@@ -1,0 +1,7 @@
+create table swiggy_db.user_name(
+   name_id BIGINT NOT NULL,
+   first_name VARCHAR(100) NOT NULL,
+   mid_name VARCHAR(100) NOT NULL,
+   last_name VARCHAR(100) NOT NULL,
+   PRIMARY KEY (name_id)
+);
